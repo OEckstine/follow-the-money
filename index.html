@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Follow the Money: The 2024 Senate Races</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:wght@400;700&family=Playfair+Display+SC:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  </head>
+
+  <body>
+    <header class="hero">
+      <h1>Follow the Money</h1>
+      <p class="subtitle"><span>The 2024 Senate Races</span></p>
+
+      <figure class="hero-image">
+        <img
+          src="capitol.png"
+          alt="The U.S. Capitol dome over a blue and red background"
+        />
+        <!-- Colored dots reuse the party colors as decorative bullets -->
+        <figcaption class="byline">
+          <span><i class="dot dem"></i>Olivia Eckstine</span>
+          <span><i class="dot rep"></i>2026</span>
+        </figcaption>
+      </figure>
+    </header>
+
+    <main>
+      <hr class="divider" />
+
+      <section class="intro">
+        <p class="dek">
+          The 25 top-fundraising Senate candidates of 2024 raised more than $1.1
+          billion. Who got it, where it came from, and whether it bought a win.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-label">Top 25, combined</span>
+            <span class="stat-num">$1.1B</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label"><i class="dot dem"></i>Democrats</span>
+            <span class="stat-num">$784M</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label"><i class="dot rep"></i>Republicans</span>
+            <span class="stat-num">$341M</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Dem-to-Rep ratio</span>
+            <span class="stat-num">2.3×</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>The Gap</h2>
+        </div>
+
+        <div class="chart-card">
+          <h3 class="chart-title">
+            Democrats raised more than twice what Republicans did
+          </h3>
+          <p class="chart-note">
+            Click a bar to rank its candidates. Use the buttons to switch the
+            source of money.
+          </p>
+
+          <div class="controls">
+            <div class="toggle" id="metricToggle">
+              <button data-metric="totalRaised" class="active">
+                Total raised
+              </button>
+              <button data-metric="individuals">Individuals</button>
+              <button data-metric="pacs">PACs</button>
+              <button data-metric="partyCommittees">Party committees</button>
+              <button data-metric="selfFunded">Self-funded</button>
+            </div>
+            <button id="back" hidden>Back to parties</button>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas id="FECChart"></canvas>
+          </div>
+        </div>
+
+        <div class="story">
+          <p>
+            Democrats outraised Republicans more than two to one. Click either
+            party's bar to see its candidates ranked, and use the buttons above
+            the chart to switch between total funds and each source of money:
+            individual donors, PACs, party committees, and candidates' own
+            wealth.
+          </p>
+          <p>
+            The breakdown shows that money did not guarantee a win. Sherrod
+            Brown, Colin Allred, and Jon Tester were the race's three biggest
+            fundraisers, and all three lost.
+          </p>
+          <p>
+            It also shows how far personal fortunes can go. David Trone spent
+            $62.9 million of his own money, nearly all of the Democrats'
+            self-funding in this group, and still lost his primary. Republicans
+            Rick Scott and Eric Hovde each put in more than $20 million of their
+            own.
+          </p>
+          <p>
+            Comparing sources reveals which candidates were powered by
+            grassroots donors and which leaned on PACs or their own bank
+            accounts.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>The Briefing</h2>
+        </div>
+        <p class="section-dek">
+          The full story, slide by slide: the gap, where it went, who raised it,
+          and why holding the seat pays.
+        </p>
+        <div class="embed">
+          <iframe
+            src="https://embed.figma.com/slides/7K01oLtYXRA4mVBswFPwoF/pres--Copy-?node-id=2-81&embed-host=share&footer=false&viewport-controls=false&theme=dark"
+            title="Follow the Money slideshow"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-label">Source</h3>
+          <p>Federal Election Commission, 2023-2024 candidate summary data.</p>
+        </div>
+        <div>
+          <h3 class="footer-label">Method</h3>
+          <p>
+            Candidate totals come from the Federal Election Commission’s
+            2023-2024 candidate summary data, downloaded as a CSV and cleaned in
+            Excel. Candidates were ranked by total receipts, and the top 25 were
+            kept. Receipts are grouped into the FEC’s categories: individual
+            contributions, PAC contributions, party committee contributions, and
+            self-funding.
+          </p>
+        </div>
+        <div>
+          <h3 class="footer-label">Graphics</h3>
+          <p>Olivia Eckstine</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="chart.js"></script>
+  </body>
+</html>
